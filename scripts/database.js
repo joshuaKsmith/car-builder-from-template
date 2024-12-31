@@ -83,8 +83,10 @@ export const getInteriors = () => {
     return [...database.interiors]
 }
 
-export const getTechnologies = () => {
-    return [...database.technologies]
+export const getTechnologies = async () => {
+    const res = await fetch("https://localhost:7080/technologies")
+    const data = await res.json()
+    return data
 }
 
 export const getPaints = () => {
