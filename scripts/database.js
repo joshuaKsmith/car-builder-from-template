@@ -75,12 +75,16 @@ export const getOrders = () => {
     return [...database.customOrders]
 }
 
-export const getWheels = () => {
-    return [...database.wheels]
+export const getWheels = async () => {
+    const res = await fetch("https://localhost:7080/wheels")
+    const data = await res.json()
+    return data
 }
 
-export const getInteriors = () => {
-    return [...database.interiors]
+export const getInteriors = async () => {
+    const res = await fetch("https://localhost:7080/interiors")
+    const data = await res.json()
+    return data
 }
 
 export const getTechnologies = async () => {
@@ -89,7 +93,9 @@ export const getTechnologies = async () => {
     return data
 }
 
-export const getPaints = () => {
-    return [...database.paints]
+export const getPaints = async () => {
+    const res = await fetch("https://localhost:7080/paintcolors")
+    const data = await res.json()
+    return data
 }
 
