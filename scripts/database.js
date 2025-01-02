@@ -76,8 +76,10 @@ export const addCustomOrder = async () => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const getOrders = () => {
-    return [...database.customOrders]
+export const getOrders = async () => {
+    const res = await fetch("https://localhost:7080/orders")
+    const data = await res.json()
+    return data
 }
 
 export const getWheels = async () => {

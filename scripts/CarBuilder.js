@@ -14,7 +14,7 @@ document.addEventListener(
     }
 )
 
-export const CarBuilder = () => {
+export const CarBuilder = async () => {
     return `
         <h1>Cars 'R Us: Personal Car Builder</h1>
 
@@ -39,7 +39,7 @@ export const CarBuilder = () => {
 
         <article class="customOrders">
             <h2>Custom Car Orders</h2>
-            ${Orders()}
+            ${await Orders()}
         </article>
     `
 }

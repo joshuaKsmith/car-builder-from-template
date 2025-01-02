@@ -6,15 +6,15 @@ const interiors = await getInteriors()
 const techs = await getTechnologies()
 const wheels = await getWheels()
 
-export const Orders = () => {
-    const orders = getOrders()
+export const Orders = async () => {
+    const orders = await getOrders()
 
     return `${
         orders.map(order => {
-            const paint = paints.find(p => p.id === order.paintId)
+            const paint = paints.find(p => p.id === order.paintColorId)
             const technology = techs.find(t => t.id === order.technologyId)
             const interior = interiors.find(i => i.id === order.interiorId)
-            const wheel = wheels.find(w => w.id === order.wheelId)
+            const wheel = wheels.find(w => w.id === order.wheelsId)
 
             return `<section class="order">
                 ${paint.color} car with
