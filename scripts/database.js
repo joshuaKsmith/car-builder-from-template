@@ -2,7 +2,7 @@ const database = {
     orderBuilder: {
 
     },
-    paints: [
+    paintColors: [
         { id: 1, color: "Silver", price: 500 },
         { id: 2, color: "Midnight Blue", price: 710 },
         { id: 3, color: "Firebrick Red", price: 965 },
@@ -30,15 +30,15 @@ const database = {
         {
             id: 1,
             interiorId: 3,
-            wheelId: 2,
+            wheelsId: 2,
             technologyId: 1,
-            paintId: 3
+            paintColorId: 3
         }
     ]
 }
 
 export const setPaint = (id) => {
-    database.orderBuilder.paintId = id
+    database.orderBuilder.paintColorId = id
     // document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
@@ -47,7 +47,7 @@ export const getCurrentOrder = () => {
 }
 
 export const setWheel = (id) => {
-    database.orderBuilder.wheelId = id
+    database.orderBuilder.wheelsId = id
     // document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
