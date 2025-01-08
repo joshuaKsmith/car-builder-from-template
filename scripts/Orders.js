@@ -12,7 +12,7 @@ export const Orders = async () => {
                     ${order.interior.material} interior,
                     and the ${order.technology.package}
                     for a total cost of
-                    ${(order.paintColor.price + order.technology.price + order.interior.price + order.wheels.price).toLocaleString("en-US", {
+                    ${(order.totalCost).toLocaleString("en-US", {
                         style: "currency",
                         currency: "USD"
                     })}
