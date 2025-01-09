@@ -61,6 +61,13 @@ export const setTechnology = (id) => {
     // document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
+export const completeOrder = async (orderId) => {
+    await fetch(`https://localhost:7080/orders/${orderId}/fulfill`, {
+        method: "POST",
+    });
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+};
+
 export const addCustomOrder = async () => {
     const newOrder = {...database.orderBuilder}
     

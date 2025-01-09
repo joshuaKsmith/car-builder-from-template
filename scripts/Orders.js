@@ -1,7 +1,15 @@
 import { getOrders } from "./database.js"
+import { completeOrder } from "./database.js"
 
 export const Orders = async () => {
     const orders = await getOrders()
+
+    document.addEventListener("click", (event) => {
+        const { name, id } = event.target;
+        if (name === "complete") {
+            completeOrder(id);
+        }
+    })
 
     return `
         ${orders.map(order => {
@@ -16,6 +24,7 @@ export const Orders = async () => {
                         style: "currency",
                         currency: "USD"
                     })}
+                    <input type="button" name="complete" id="${order.id}" value="Complete">
                 </section>
             `
         }).join("")}
